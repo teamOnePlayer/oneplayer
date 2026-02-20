@@ -278,30 +278,7 @@ const oneplayer = new OnePlayer(client, nodes, {
 
 ---
 
-## 📚 Documentation
-
 Full documentation is available at [oneplayer.js.org](https://oneplayer.js.org)
-
-- [Installation](https://oneplayer.js.org/basics/installation)
-- [Usage Guide](https://oneplayer.js.org/basics/usage)
-- [API Reference](https://oneplayer.js.org/basics/api-reference)
-- [Player](https://oneplayer.js.org/implementations/player)
-- [Filters](https://oneplayer.js.org/implementations/filters)
-- [Queue](https://oneplayer.js.org/implementations/queue)
-- [Events](https://oneplayer.js.org/implementations/events)
-
----
-
-## 🎯 Core Components
-
-- **OnePlayer** - Main engine managing nodes and players
-- **Node** - Lavalink node connection management
-- **Player** - Audio playback control for guilds
-- **Queue** - Advanced queue operations
-- **Filters** - High-performance audio filters
-- **Track** - Track metadata and resolution
-- **Connection** - Voice connection management
-- **Rest** - Lavalink REST API client
 
 ---
 
@@ -309,13 +286,6 @@ Full documentation is available at [oneplayer.js.org](https://oneplayer.js.org)
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
 
 ## 📄 License
 
