@@ -40,7 +40,7 @@
 ## 📦 Installation
 
 ```bash
-npm install oneplayer discord.js
+npm install oneplayer
 ```
 
 **Requirements:**
