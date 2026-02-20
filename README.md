@@ -222,21 +222,31 @@ if (player.isIdle) {
 
 ## 📡 Events
 
+OnePlayer supports both player-level and global-level event listening for maximum flexibility.
+
+### Global Events (OnePlayer Instance)
+
+Listen to events from all players globally:
+
 ```javascript
-// Track events
+// Track events - fired for all players
 oneplayer.on('trackStart', (player, track) => {
-  console.log(`Now playing: ${track.info.title}`);
+  console.log(`Now playing: ${track.info.title} in guild ${player.guildId}`);
 });
 
 oneplayer.on('trackEnd', (player, track, payload) => {
-  console.log(`Track ended: ${payload.reason}`);
+  console.log(`Track ended: ${payload.reason} in guild ${player.guildId}`);
 });
 
 oneplayer.on('trackError', (player, track, payload) => {
   console.error('Track error:', payload.exception);
 });
 
-// Player events
+oneplayer.on('trackStuck', (player, track, payload) => {
+  console.error('Track stuck:', payload);
+});
+
+// Player lifecycle events
 oneplayer.on('playerCreate', (player) => {
   console.log(`Player created: ${player.guildId}`);
 });
@@ -254,6 +264,37 @@ oneplayer.on('nodeDestroy', (node) => {
   console.log(`Node destroyed: ${node.name}`);
 });
 ```
+
+### Player-Specific Events
+
+Listen to events from a specific player:
+
+```javascript
+const player = oneplayer.createConnection({ /* ... */ });
+
+// These events only fire for this specific player
+player.on('trackStart', (player, track) => {
+  console.log(`Track started: ${track.info.title}`);
+});
+
+player.on('trackEnd', (player, track, payload) => {
+  console.log(`Track ended: ${payload.reason}`);
+});
+
+player.on('trackError', (player, track, payload) => {
+  console.error('Track error:', payload.exception);
+});
+```
+
+### Event Compatibility
+
+For backward compatibility, all track events (`trackStart`, `trackEnd`, `trackError`, `trackStuck`, `socketClosed`) are emitted on both:
+- The specific player instance
+- The global OnePlayer instance
+
+This means you can listen on either level depending on your needs:
+- Use global events for centralized logging or handling across all guilds
+- Use player-specific events for guild-specific functionality
 
 ---
 
@@ -309,4 +350,5 @@ Give a ⭐️ if this project helped you!
 Made with ❤️ by the Community One
 
 </div>
+
 

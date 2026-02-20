@@ -331,6 +331,8 @@ class Player extends EventEmitter {
       case 'TrackStartEvent':
         this.playing = true;
         this.emit('trackStart', this, payload.track, payload);
+        // Also emit on OnePlayer instance for backward compatibility
+        this.oneplayer.emit('trackStart', this, payload.track, payload);
         break;
         
       case 'TrackEndEvent':
@@ -339,14 +341,20 @@ class Player extends EventEmitter {
         
       case 'TrackExceptionEvent':
         this.emit('trackError', this, payload.track, payload);
+        // Also emit on OnePlayer instance
+        this.oneplayer.emit('trackError', this, payload.track, payload);
         break;
         
       case 'TrackStuckEvent':
         this.emit('trackStuck', this, payload.track, payload);
+        // Also emit on OnePlayer instance
+        this.oneplayer.emit('trackStuck', this, payload.track, payload);
         break;
         
       case 'WebSocketClosedEvent':
         this.emit('socketClosed', this, payload);
+        // Also emit on OnePlayer instance
+        this.oneplayer.emit('socketClosed', this, payload);
         break;
     }
   }
@@ -388,6 +396,8 @@ class Player extends EventEmitter {
         });
         
         this.emit('trackEnd', this, payload.track, payload);
+        // Also emit on OnePlayer instance for backward compatibility
+        this.oneplayer.emit('trackEnd', this, payload.track, payload);
         return;
       } else if (this.loop === 'queue' && this.current) {
         // For queue loop, add current track to end of queue
@@ -410,6 +420,8 @@ class Player extends EventEmitter {
     }
     
     this.emit('trackEnd', this, payload.track, payload);
+    // Also emit on OnePlayer instance for backward compatibility
+    this.oneplayer.emit('trackEnd', this, payload.track, payload);
   }
 
   /**

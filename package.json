@@ -1,6 +1,6 @@
 {
   "name": "@pappu100/oneplayer",
-  "version": "1.0.0-beta",
+  "version": "1.0.1-beta",
   "description": "High-performance Lavalink client - Engine, Player, and Filters",
   "main": "build/index.js",
   "types": "build/index.d.ts",
