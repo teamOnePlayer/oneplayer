@@ -52,7 +52,7 @@ When using OnePlayer:
 
 This security policy covers:
 
-- OnePlayer core library (`oneplayer` npm package)
+- OnePlayer core library (`@pappu100/oneplayer` npm package)
 - Example code in the repository
 
 Out of scope:

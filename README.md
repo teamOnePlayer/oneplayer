@@ -1,13 +1,13 @@
 <div align="center">
 
-<img width="3031" height="588" alt="OnePlayer" src="https://github.com/user-attachments/assets/05340a4b-9f35-4868-a5a7-4372df85cb79" />
+<img width="3031" height="588" alt="OnePlayer" src="https://github-production-user-asset-6210df.s3.amazonaws.com/120780563/552637838-05340a4b-9f35-4868-a5a7-4372df85cb79.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260220%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260220T104835Z&X-Amz-Expires=300&X-Amz-Signature=4804d1f9263e86b6dc5ed80cf6bade69d05fc073312342ca83b22a11a936cbed&X-Amz-SignedHeaders=host" />
 
 
 <br/>
 
 <!-- Badges -->
-[![npm version](https://img.shields.io/npm/v/oneplayer.svg?style=for-the-badge&logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/oneplayer)
-[![Downloads](https://img.shields.io/npm/dt/oneplayer.svg?style=for-the-badge&logo=npm&logoColor=white&color=7C3AED)](https://www.npmjs.com/package/oneplayer)
+[![npm version](https://img.shields.io/npm/v/@pappu100/oneplayer.svg?style=for-the-badge&logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/@pappu100/oneplayer)
+[![Downloads](https://img.shields.io/npm/dt/@pappu100/oneplayer.svg?style=for-the-badge&logo=npm&logoColor=white&color=7C3AED)](https://www.npmjs.com/package/@pappu100/oneplayer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
 [![GitHub Stars](https://img.shields.io/github/stars/teamOnePlayer/oneplayer?style=for-the-badge&logo=github&color=gold)](https://github.com/teamOnePlayer/oneplayer)
 
@@ -18,6 +18,10 @@
 <br/>
 
 **High-performance, minimal Lavalink client for Discord.js**
+
+```bash
+npm install @pappu100/oneplayer
+```
 
 </div>
 
@@ -40,7 +44,7 @@
 ## 📦 Installation
 
 ```bash
-npm install oneplayer
+npm install @pappu100/oneplayer
 ```
 
 **Requirements:**
@@ -54,7 +58,7 @@ npm install oneplayer
 
 ```javascript
 const { Client, GatewayIntentBits } = require('discord.js');
-const { OnePlayer } = require('oneplayer');
+const { OnePlayer } = require('@pappu100/oneplayer');
 
 const client = new Client({
   intents: [
